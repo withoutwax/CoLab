@@ -9,6 +9,17 @@
   </head>
 
   <body>
+    <div>
+      <%= link_to "CoLab", root_path %>
+
+      <% if user_signed_in? %>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        <%= link_to "Profile", user_path(current_user.id) %>
+      <% else %>
+        <%= link_to('Login', new_user_session_path) %>
+      <% end %>
+    </div>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
