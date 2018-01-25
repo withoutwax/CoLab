@@ -1,0 +1,2 @@
+module CoLabsHelper
+end
